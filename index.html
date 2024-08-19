@@ -5,16 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netfys - Under Construction</title>
     <link rel="stylesheet" href="styles.css">
-
-    <!-- Favicon link -->
     <link rel="icon" type="image/png" href="favicon.png">
-    <!-- If using an .ico file, it would be -->
-    <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
 </head>
 <body>
+    <div class="top-left-logo">
+        <img src="favicon.png" alt="Netfys Logo">
+    </div>
     <div class="container">
         <h1>Netfys</h1>
-        <p class="breathing-text">We are currently working hard to launch our new website. Stay tuned!</p>
+        <p class="typing-text"></p>
     </div>
+    <footer>
+        <p>&copy; 2024 Netfys. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const text = "We are currently working hard to launch our new website. Stay tuned!";
+        let index = 0;
+        let typingSpeed = 100; // Typing speed in milliseconds
+        let pauseAfterTyping = 2000; // Pause after typing the whole sentence
+
+        function type() {
+            if (index < text.length) {
+                document.querySelector(".typing-text").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(type, typingSpeed);
+            } else {
+                setTimeout(() => {
+                    index = 0;
+                    document.querySelector(".typing-text").innerHTML = "";
+                    setTimeout(type, typingSpeed);
+                }, pauseAfterTyping);
+            }
+        }
+
+        window.onload = type;
+    </script>
 </body>
 </html>
