@@ -1,62 +1,54 @@
-/* Basic reset */
-* {
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
+    font-family: 'Roboto', sans-serif;
     background-color: #000;
     color: #fff;
-    font-family: 'Roboto', sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: hidden;
-    opacity: 0;
-    animation: fadeIn 3s ease-in forwards;
-}
-
-/* Container styles */
-.container {
     text-align: center;
+    overflow: hidden;
 }
 
-/* Title styles */
+.top-left-logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.top-left-logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.container {
+    max-width: 800px;
+}
+
+.typing-text {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+}
+
 h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: 48px;
+    margin: 0;
+    animation: fadeIn 2s ease-in-out;
 }
 
-/* Breathing effect for the text */
-.breathing-text {
-    font-size: 1.5rem;
-    animation: breathing 5s infinite ease-in-out;
-}
-
-/* Fade-in effect */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Breathing effect keyframes */
-@keyframes breathing {
-    0% {
-        opacity: 0.7;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.05);
-    }
-    100% {
-        opacity: 0.7;
-        transform: scale(1);
-    }
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
