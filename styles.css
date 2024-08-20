@@ -15,26 +15,41 @@ body {
 
 .top-left-logo {
     position: absolute;
-    top: 10px; /* Adjust for better spacing */
-    left: 10px; /* Adjust for better spacing */
+    top: 10px;
+    left: 10px;
     padding: 10px;
 }
 
 .top-left-logo img {
-    width: 100px; /* Larger size for the logo */
-    height: 100px;
+    width: 150px;
+    height: 150px;
     margin: 0;
     padding: 0;
 }
 
 .container {
     max-width: 800px;
-    padding: 20px;
 }
 
 .typing-text {
-    font-size: 36px; /* Larger font size */
+    font-size: 24px;
     margin-top: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.15em solid #fff;
+    animation:
+        typing 8s steps(40, end),
+        blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #fff; }
 }
 
 footer {
@@ -42,76 +57,33 @@ footer {
     bottom: 10px;
     width: 100%;
     text-align: center;
-    font-size: 16px; /* Slightly larger footer text */
+    font-size: 14px;
     color: #fff;
 }
 
 h1 {
-    font-size: 64px; /* Larger title size */
+    font-size: 48px;
     margin: 0;
     opacity: 0;
     animation: fadeIn 3s ease-in-out forwards;
 }
 
-/* Typing effect */
-@keyframes typing {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 100%;
-    }
-}
-
-.typing-text {
-    display: inline-block;
-    border-right: 2px solid;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typing 3.5s steps(30, end) infinite;
-}
-
-/* Fade in for netfys */
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
 
-/* Responsive design adjustments */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 48px;
-    }
-
-    .typing-text {
-        font-size: 28px;
-    }
-
     .top-left-logo img {
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
     }
 
-    footer {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 480px) {
     h1 {
         font-size: 36px;
     }
 
     .typing-text {
-        font-size: 24px;
-    }
-
-    .top-left-logo img {
-        width: 60px;
-        height: 60px;
-    }
-
-    footer {
-        font-size: 12px;
+        font-size: 18px;
     }
 }
