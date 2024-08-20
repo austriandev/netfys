@@ -15,20 +15,21 @@ body {
 
 .top-left-logo {
     position: absolute;
-    top: 10; /* Align to the top */
-    left: 10; /* Align to the left */
-    padding: 10px; /* Add some padding if needed */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    padding: 10px; /* Add some padding to space out from edges */
 }
 
 .top-left-logo img {
-    width: 150px;
-    height: 150px;
-    margin: 0; /* Remove any margin */
-    padding: 0; /* Remove any padding */
+    width: 50px; /* Adjust size for logo */
+    height: 50px;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
     max-width: 800px;
+    padding: 20px;
 }
 
 .typing-text {
@@ -52,7 +53,66 @@ h1 {
     animation: fadeIn 3s ease-in-out forwards; /* Apply the fadeIn animation */
 }
 
+/* Typing effect */
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.typing-text {
+    display: inline-block;
+    border-right: 2px solid;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 24px;
+    animation: typing 3.5s steps(30, end) infinite;
+}
+
+/* Fade in for netfys */
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px; /* Adjust font size for smaller screens */
+    }
+
+    .typing-text {
+        font-size: 20px; /* Adjust font size for smaller screens */
+    }
+
+    .top-left-logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px; /* Adjust font size for very small screens */
+    }
+
+    .typing-text {
+        font-size: 18px; /* Adjust font size for very small screens */
+    }
+
+    .top-left-logo img {
+        width: 35px;
+        height: 35px;
+    }
+
+    footer {
+        font-size: 10px;
+    }
 }
