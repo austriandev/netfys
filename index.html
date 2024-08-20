@@ -23,7 +23,6 @@
         const text = "We are currently working hard to launch our new website. Stay tuned!";
         let index = 0;
         let typingSpeed = 50; // Typing speed in milliseconds
-        let pauseAfterTyping = 1000; // Pause after typing the whole sentence
 
         function type() {
             if (index < text.length) {
@@ -31,11 +30,8 @@
                 index++;
                 setTimeout(type, typingSpeed);
             } else {
-                setTimeout(() => {
-                    index = 0;
-                    document.querySelector(".typing-text").innerHTML = "";
-                    setTimeout(type, typingSpeed);
-                }, pauseAfterTyping);
+                // When typing is complete, the text stays and no further actions are taken
+                clearTimeout(type);
             }
         }
 
