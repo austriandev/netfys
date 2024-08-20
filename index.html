@@ -22,17 +22,15 @@
     <script>
         const text = "We are currently working hard to launch our new website. Stay tuned!";
         let index = 0;
-        let typingSpeed = 50; // Typing speed in milliseconds
+        const typingSpeed = 50; // Typing speed in milliseconds
 
         function type() {
             if (index < text.length) {
                 document.querySelector(".typing-text").innerHTML += text.charAt(index);
                 index++;
                 setTimeout(type, typingSpeed);
-            } else {
-                // When typing is complete, the text stays and no further actions are taken
-                clearTimeout(type);
-            }
+            } 
+            // No else block is needed here, so the typing stops after the text is fully typed
         }
 
         window.onload = type;
